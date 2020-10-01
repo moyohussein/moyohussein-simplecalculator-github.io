@@ -20,36 +20,26 @@ element.forEach(element => element.addEventListener('click', () => {
 deleteBtn.addEventListener('dblclick', () => {
     display.value = '0';
     output.value = '';
-})
+});
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     output.value = eval(display.value);
     display.classList.add('font-style');
     console.log(eval(display.value));
-    const listDetail = document.createElement('dd');
-    const listTitle = document.createElement('dt');
-    const newDiv = document.createElement('div');
-    listTitle.classList.add('liststyle');
-    newDiv.classList.add('divclass');
-    newDiv.appendChild(listDetail);
-    newDiv.appendChild(listTitle);
-    history.appendChild(newDiv);
-    listDetail.textContent =  `${display.value} =`; 
-    listTitle.textContent = `${output.value}`;
+    history.innerHTML += `<div class='divclass'><dt class='liststyle'>${output.value}</dt><dd>${display.value}</dd></div>`;
+
     for (let i = 0; i < history.children.length; i++) {
         history.children[i].addEventListener('click', () => {
             display.value = liststyle[i].textContent;
             output.value = '';
             display.classList.remove('font-style');
-        })
-    }
-})
+        });
+    };
+});
 
 toggleBtn.addEventListener('click', (event) => {
     event.preventDefault();
     document.body.classList.toggle('light');
     (toggleBtn.textContent === `Light mode 🔆`) ? (toggleBtn.textContent = `Dark mode 🌙`) : (toggleBtn.textContent = `Light mode 🔆`)
-})
-
-
+});
