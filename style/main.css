@@ -68,6 +68,7 @@ body {
     color: var(--font-color);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    padding-top: 1rem;
 }
 
 .bar {
@@ -175,20 +176,21 @@ input.btn--danger {
     color: var(--danger-font-color);
 }
 
+.container {
+    margin-top: 1rem;
+    max-height: 75vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
 dl {
     line-height: 1;
-    margin-top: 1rem;
     color: var(--font-color);
     display: flex;
     flex-direction: column;
     text-align: right;
-    height: 75vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-highlight-color: var(--background-color);
-
+    transform: scaleY(-1);
 }
 
 dt {
@@ -206,6 +208,7 @@ dd {
 
 dl > * {
     margin-bottom: 0.5rem;
+    transform: scaleY(-1);
 }
 
 dl > *:hover {
